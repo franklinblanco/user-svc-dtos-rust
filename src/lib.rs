@@ -2,3 +2,4 @@
 
 pub mod dtos;
 pub mod domain;
+pub mod enums;
