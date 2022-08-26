@@ -7,6 +7,7 @@ pub struct UserForCreationDto{
     #[serde(default = "get_default_app")]
     pub app: String,
     pub credential: String,
+    #[serde(rename = "credentialType")]
     pub credential_type: CredentialType,
     pub password: String,
     pub name: String
@@ -16,6 +17,7 @@ pub struct UserForLoginDto{
     #[serde(default = "get_default_app")]
     pub app: String,
     pub credential: String,
+    #[serde(rename = "credentialType")]
     pub credential_type: CredentialType,
     pub password: String
 }
