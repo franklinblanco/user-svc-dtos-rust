@@ -7,7 +7,7 @@ pub enum CredentialType {
     Email
 }
 impl CredentialType {
-    pub fn get_max_length(&self) -> i32 {
+    pub fn get_max_length(&self) -> usize {
         match self {
             CredentialType::PhoneNumber => 10,
             CredentialType::Email => 255,
