@@ -11,7 +11,8 @@ pub struct User{
     #[serde(skip_serializing_if = "Option::is_none")]
     pub last_updated: Option<NaiveDateTime>,
     pub app: String,
-    pub email: String,
+    pub credential: String,
+    pub credential_type: String,
     pub name: String,
     #[serde(skip_serializing)]
     pub password: String,
@@ -24,7 +25,8 @@ impl User {
             time_created: None, //  This will be automatically generated from the database
             last_updated: None, //  This will be automatically generated from the database
             app: "".to_string(),
-            email: "".to_string(),
+            credential: "".to_string(),
+            credential_type: "".to_string(),
             name:"".to_string(),
             password:"".to_string(),
             salt: "".to_string() }
@@ -34,7 +36,8 @@ impl User {
             time_created: None, //  This will be automatically generated from the database
             last_updated: None, //  This will be automatically generated from the database
             app: incoming_user.app.to_string(),
-            email: incoming_user.email.to_string(),
+            credential: incoming_user.credential.to_string(),
+            credential_type: incoming_user.credential_type.to_string(),
             name: incoming_user.name.to_string(),
             password: incoming_user.password.to_string(),
             salt: "".to_string() }
