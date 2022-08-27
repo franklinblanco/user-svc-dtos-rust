@@ -14,9 +14,9 @@ pub struct User{
     pub credential: String,
     pub credential_type: String,
     pub name: String,
-    #[serde(skip_serializing)]
+    #[serde(skip_serializing, skip_deserializing)]
     pub password: String,
-    #[serde(skip_serializing)]
+    #[serde(skip_serializing, skip_deserializing)]
     pub salt: String
 }
 impl User {
