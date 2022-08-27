@@ -6,12 +6,12 @@ pub const REFRESH_TOKEN_EXPIRATION_TIME_IN_DAYS: i32 = 20;
 
 #[derive(Serialize, Deserialize)]
 pub struct Token {
-    #[serde(skip_serializing)]
+    #[serde(skip_serializing, skip_deserializing)]
     pub id: i32,
     pub user_id: i32,
-    #[serde(skip_serializing)]
+    #[serde(skip_serializing, skip_deserializing)]
     pub time_created: Option<NaiveDateTime>,
-    #[serde(skip_serializing)]
+    #[serde(skip_serializing, skip_deserializing)]
     pub last_updated: Option<NaiveDateTime>,
     pub auth_token: String,
     pub refresh_token: String
