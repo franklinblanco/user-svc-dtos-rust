@@ -1,4 +1,5 @@
 
+#[derive(Debug)]
 pub enum Error {
     CommunicatorError(String),
     UknownError,
