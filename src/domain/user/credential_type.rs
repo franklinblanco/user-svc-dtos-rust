@@ -1,7 +1,7 @@
 use std::fmt::Display;
 use serde::{Serialize, Deserialize};
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
 pub enum CredentialType {
     PhoneNumber,
     Email

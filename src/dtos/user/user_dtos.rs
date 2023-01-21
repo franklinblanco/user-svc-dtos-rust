@@ -2,7 +2,7 @@ use serde::{Serialize, Deserialize};
 
 use crate::domain::user::credential_type::CredentialType;
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
 pub struct UserForCreationDto{
     #[serde(default = "get_default_app")]
     pub app: String,
@@ -12,8 +12,8 @@ pub struct UserForCreationDto{
     pub password: String,
     pub name: String
 }
-#[derive(Serialize, Deserialize, Debug)]
-pub struct UserForLoginDto{
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
+pub struct UserForLoginDto {
     #[serde(default = "get_default_app")]
     pub app: String,
     pub credential: String,
@@ -21,7 +21,7 @@ pub struct UserForLoginDto{
     pub credential_type: CredentialType,
     pub password: String
 }
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
 pub struct UserForAuthenticationDto{
     #[serde(default = "get_default_app")]
     pub app: String,
