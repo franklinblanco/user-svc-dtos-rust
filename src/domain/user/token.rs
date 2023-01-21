@@ -4,7 +4,7 @@ use serde::{Serialize, Deserialize};
 pub const AUTH_TOKEN_EXPIRATION_TIME_IN_DAYS:i32 = 1;
 pub const REFRESH_TOKEN_EXPIRATION_TIME_IN_DAYS: i32 = 20;
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone, Debug, Default, PartialEq, Eq, PartialOrd, Ord)]
 pub struct Token {
     #[serde(skip_serializing, skip_deserializing)]
     pub id: i32,

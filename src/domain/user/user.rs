@@ -3,7 +3,7 @@ use serde::{Serialize, Deserialize};
 
 use crate::dtos::user::user_dtos::UserForCreationDto;
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Default, Clone, PartialEq, Eq, PartialOrd, Ord)]
 pub struct User{
     pub id: i32,
     #[serde(skip_serializing_if = "Option::is_none")]
