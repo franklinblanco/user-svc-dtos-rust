@@ -28,6 +28,18 @@ pub struct UserForAuthenticationDto{
     pub id: String,
     pub token: String
 }
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
+pub struct UserAuthHeader{
+    pub id: String,
+    pub token: String
+}
+impl From<UserAuthHeader> for UserForAuthenticationDto {
+    fn from(value: UserAuthHeader) -> Self {
+        Self { app: get_default_app(), id: value.id, token: value.token }
+    }
+}
+
+
 
 fn get_default_app() -> String {
     "deez".to_string()
